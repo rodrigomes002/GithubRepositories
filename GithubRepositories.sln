@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubRepositories.API", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubRepositories.Infra", "GithubRepositories.Infra\GithubRepositories.Infra.csproj", "{74B05383-96F5-4513-A5E4-DDD15FDD3DAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubRepositories.Domain", "GithubRepositories.Domain\GithubRepositories.Domain.csproj", "{3E78D0CC-942C-404A-AB9E-09E1FAC19417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubRepositories.Application", "GithubRepositories.Application\GithubRepositories.Application.csproj", "{2D5B9E37-1F0B-4103-B086-6E1F3149117F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{74B05383-96F5-4513-A5E4-DDD15FDD3DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74B05383-96F5-4513-A5E4-DDD15FDD3DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74B05383-96F5-4513-A5E4-DDD15FDD3DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E78D0CC-942C-404A-AB9E-09E1FAC19417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E78D0CC-942C-404A-AB9E-09E1FAC19417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E78D0CC-942C-404A-AB9E-09E1FAC19417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E78D0CC-942C-404A-AB9E-09E1FAC19417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5B9E37-1F0B-4103-B086-6E1F3149117F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5B9E37-1F0B-4103-B086-6E1F3149117F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5B9E37-1F0B-4103-B086-6E1F3149117F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5B9E37-1F0B-4103-B086-6E1F3149117F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
