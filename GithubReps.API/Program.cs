@@ -10,18 +10,23 @@ using Microsoft.EntityFrameworkCore;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<GithubService>();
+builder.Services.AddScoped<RepositoriesService>();
 builder.Services.AddScoped<IPopularRepRepository, PopularRepRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -45,6 +50,8 @@ builder.Services.AddCors(option =>
                .AllowAnyMethod();
     });
 });
+
+
 
 var app = builder.Build();
 

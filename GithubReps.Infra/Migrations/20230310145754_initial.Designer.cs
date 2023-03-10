@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GithubReps.Infra.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230309203910_initial")]
+    [Migration("20230310145754_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

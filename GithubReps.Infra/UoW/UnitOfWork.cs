@@ -7,23 +7,23 @@ namespace GithubReps.Infra.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ApplicationContext applicationContext;
+        private readonly ApplicationContext _context;
         public IPopularRepRepository PopularRepRepository { get; }
 
-        public UnitOfWork(ApplicationContext applicationContext)
+        public UnitOfWork(ApplicationContext context)
         {
-            this.applicationContext = applicationContext;
-            this.PopularRepRepository = new PopularRepRepository(applicationContext);
+            this._context = context;
+            this.PopularRepRepository = new PopularRepRepository(context);
         }
 
         public async Task CommitAsync()
         {
-            await this.applicationContext.SaveChangesAsync();
+            await this._context.SaveChangesAsync();
         }
 
         public async Task DisposeAsync()
         {
-            await this.applicationContext.DisposeAsync();
+            await this._context.DisposeAsync();
         }
     }
 }

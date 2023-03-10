@@ -2,11 +2,22 @@
 {
     public class PopularRep
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string FullName { get; set; }
-        public string Description { get; set; }
-        public int Stars { get; set; }
-        public string Url { get; set; }
+        public int Id { get; private set; }
+        public int IdRep { get; private set; }
+        public string Name { get; private set; }
+        public string FullName { get; private set; }
+        public string Description { get; private set; }
+        public int Stars { get; private set; }
+        public string Url { get; private set; }
+
+        public PopularRep(int idRep, string name, string fullName, string description, int stars, string url)
+        {
+            IdRep = idRep;
+            Name = name;
+            FullName = fullName;
+            Description = description;
+            Stars = stars;
+            Url = url;
+        }
     }
 }

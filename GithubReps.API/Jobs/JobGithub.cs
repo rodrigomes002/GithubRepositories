@@ -14,17 +14,15 @@ namespace GithubReps.API.Jobs
             this.githubService = githubService;
         }
 
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
             logger.LogInformation($"Iniciando rotina de busca de repositórios populares do github.");
 
-            var languages = new List<string>() { "JavaScript", "Java", "csharp", "c", "python" };
+            await this.githubService.CreateRepositoriesMostPopularByLanguage();
 
-            this.githubService.GetRepositoriesMostPopularByLanguage(languages);
+            logger.LogInformation($"Rotina de busca de repositórios populares do github finalizada.");
 
-            logger.LogInformation($"Iniciando rotina de busca de repositórios populares do github.");
-
-            return Task.CompletedTask;
+            // return Task.CompletedTask;
         }
     }
 }

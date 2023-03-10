@@ -1,6 +1,8 @@
-﻿using GithubReps.Domain.Reps;
+﻿using GithubReps.Domain.Filters;
+using GithubReps.Domain.Reps;
 using GithubReps.Domain.Reps.Interface;
 using GithubReps.Infra.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace GithubReps.Infra.PopularReps
 {
@@ -13,14 +15,22 @@ namespace GithubReps.Infra.PopularReps
             this._context = context;
         }
 
-        public Task CreateAsync(PopularRep popularRep)
+        public async Task CreateAsync(PopularRep popularRep)
         {
-            throw new NotImplementedException();
+            await this._context.PopularRep.AddAsync(popularRep);
         }
 
-        public Task<List<PopularRep>> GetAllAsync()
+        public async Task<List<PopularRep>> GetRepositoriesByFilterAsync(PopularRepFilter filter)
         {
-            throw new NotImplementedException();
+            var query = this._context.PopularRep.AsQueryable();
+
+            if (!filter.AllContent)
+                query.Skip((filter.Page - 1) * filter.PageSize).Take(filter.PageSize);
+
+            if (filter.IdsRep.Any())
+                query.Where(q => filter.IdsRep.Contains(q.IdRep));
+
+            return await query.ToListAsync();
         }
     }
 }
