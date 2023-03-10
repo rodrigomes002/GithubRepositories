@@ -20,9 +20,7 @@ namespace GithubReps.API.Jobs
 
             await this.githubService.CreateRepositoriesMostPopularByLanguage();
 
-            logger.LogInformation($"Rotina de busca de repositórios populares do github finalizada.");
-
-            // return Task.CompletedTask;
+            logger.LogInformation($"Rotina de busca de repositórios populares do github finalizada.");            
         }
     }
 }
