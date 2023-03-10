@@ -1,3 +1,10 @@
+## GithubReps
+Aplicação para listar repositórios do github mais populares das linguagens: "JavaScript", "Java", "csharp", "c", "python"
+
+## Tecnologias
+.NET 6 / C#
+SQLSERVER
+Quartz.net
 
 ## Documentação da API
 
@@ -16,4 +23,3 @@
 ```http
   GET /api/v1/repositores/listAll
 ```
-
