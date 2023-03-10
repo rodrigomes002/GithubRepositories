@@ -2,9 +2,12 @@
 Aplicação para listar repositórios do github mais populares das linguagens: "JavaScript", "Java", "csharp", "c", "python"
 
 ## Tecnologias
-.NET 6 / C#
-SQLSERVER
-Quartz.net
+
+| Nome   |
+| :---------- |
+| `.NET 6 / C#` |
+| `SQLSERVER` |
+| `Quartz.net` |
 
 ## Documentação da API
 
