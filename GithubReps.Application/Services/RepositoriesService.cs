@@ -16,5 +16,10 @@ namespace GithubReps.Application.Services
         {
             return await this._unitOfWork.PopularRepRepository.GetRepositoriesByFilterAsync(filter);
         }
+
+        public async Task<List<PopularRep>> GetAllAsync()
+        {
+            return await this._unitOfWork.PopularRepRepository.GetAllAsync();
+        }
     }
 }

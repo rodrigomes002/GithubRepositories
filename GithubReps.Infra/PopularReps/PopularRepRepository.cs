@@ -29,11 +29,16 @@ namespace GithubReps.Infra.PopularReps
 
             if (filter.Languages.Any())
                 query = query.Where(q => filter.Languages.Contains(q.Language));
-            
+
             if (!filter.AllContent)
                 query = query.Skip((filter.Page - 1) * filter.PageSize).Take(filter.PageSize);
 
-            return await query.OrderByDescending(q=> q.Stars).ToListAsync();
+            return await query.OrderByDescending(q => q.Stars).ToListAsync();
+        }
+
+        public async Task<List<PopularRep>> GetAllAsync()
+        {
+            return await this._context.PopularRep.OrderByDescending(q => q.Stars).ToListAsync();
         }
     }
 }

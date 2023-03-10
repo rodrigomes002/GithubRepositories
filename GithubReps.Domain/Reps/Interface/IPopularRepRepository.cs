@@ -6,5 +6,7 @@ namespace GithubReps.Domain.Reps.Interface
     {
         Task CreateAsync(PopularRep popularRep);
         Task<List<PopularRep>> GetRepositoriesByFilterAsync(PopularRepFilter filter);
+        Task<List<PopularRep>> GetAllAsync();
     }
 }
+

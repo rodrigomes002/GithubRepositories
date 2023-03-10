@@ -19,9 +19,17 @@ namespace GithubReps.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetRepositoriesByFilter(PopularRepFilter filter)
+        [Route("listByFilter")]
+        public async Task<IActionResult> ListRepositoriesByFilter([FromBody] PopularRepFilter filter)
         {
             return Ok(await this._repositoriesService.GetRepositoriesByFilterAsync(filter));
+        }
+
+        [HttpGet]
+        [Route("listAll")]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await this._repositoriesService.GetAllAsync());
         }
     }
 }
