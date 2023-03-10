@@ -14,7 +14,7 @@ Aplicação para listar repositórios do github mais populares das linguagens: "
 #### Retorna todos os repositórios por filtro
 
 ```http
-  POST /api/v1/repositores/listByFilter
+  POST /api/v1/repositories/listByFilter
 ```
 
 | Body   | Tipo       |
@@ -24,5 +24,5 @@ Aplicação para listar repositórios do github mais populares das linguagens: "
 #### Retorna todos os repositórios
 
 ```http
-  GET /api/v1/repositores/listAll
+  GET /api/v1/repositories/listAll
 ```
