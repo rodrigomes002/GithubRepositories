@@ -9,8 +9,9 @@
         public string Description { get; private set; }
         public int Stars { get; private set; }
         public string Url { get; private set; }
+        public string Language { get; private set; }
 
-        public PopularRep(int idRep, string name, string fullName, string description, int stars, string url)
+        public PopularRep(int idRep, string name, string fullName, string description, int stars, string url, string language)
         {
             IdRep = idRep;
             Name = name;
@@ -18,6 +19,7 @@
             Description = description;
             Stars = stars;
             Url = url;
+            Language = language;
         }
     }
 }

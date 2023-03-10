@@ -51,7 +51,7 @@ namespace GithubReps.Application.Services
                     if (reps.Any(r => r.IdRep == item.id))
                         continue;
 
-                    var popuparRep = new PopularRep(item.id, item.name, item.full_name, item.description, item.stargazers_count, item.html_url);
+                    var popuparRep = new PopularRep(item.id, item.name, item.full_name, item.description, item.stargazers_count, item.html_url, item.language);
 
                     this._logger.LogInformation("Cadastrando repositório...");
                     await this._unitOfWork.PopularRepRepository.CreateAsync(popuparRep);

@@ -24,13 +24,16 @@ namespace GithubReps.Infra.PopularReps
         {
             var query = this._context.PopularRep.AsQueryable();
 
-            if (!filter.AllContent)
-                query.Skip((filter.Page - 1) * filter.PageSize).Take(filter.PageSize);
-
             if (filter.IdsRep.Any())
-                query.Where(q => filter.IdsRep.Contains(q.IdRep));
+                query = query.Where(q => filter.IdsRep.Contains(q.IdRep));
 
-            return await query.ToListAsync();
+            if (filter.Languages.Any())
+                query = query.Where(q => filter.Languages.Contains(q.Language));
+            
+            if (!filter.AllContent)
+                query = query.Skip((filter.Page - 1) * filter.PageSize).Take(filter.PageSize);
+
+            return await query.OrderByDescending(q=> q.Stars).ToListAsync();
         }
     }
 }
